@@ -1,0 +1,30 @@
+body{
+  background-color:#ebeafb;
+}
+a{
+  color:#000000;
+      text-decoration: none !important;
+}
+a:hover{
+  color:#f2f6fc;
+  text-decoration: none !important;
+}
+.row1{
+  background-color:#ffff;
+  box-shadow:0 0 20px #ebeafb !important;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+.card{
+  border-radius: 2rem;
+}
+.card-img, .card-img-top {
+  border-top-left-radius:2rem;
+  border-top-right-radius:2rem;
+}
+a h5{
+  color: #191414;
+}
+a p{
+  color: #191414;
+}

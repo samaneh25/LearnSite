@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'bootstrap.bundle.min.js' %}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+{% block title %} مقالات {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <!--start menu-->
+
+        <!--end menu-->
+        <!--s line1-->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="{% static 'publicPages/images/777.PNG' %}" class="img-fluid">
+                    " class="card-img-top imge1" alt="...">
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="{% static 'publicPages/images/777.PNG' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="{% static 'publicPages/images/777.PNG' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="{% static 'publicPages/images/777.PNG' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--e line1-->
+        <!--s line2-->
+
+        <!--e line2-->
+        <!--s line3-->
+
+        <!--e line3-->
+        <!--s line4-->
+
+        <!--e line4-->
+        <!-- start footer-->
+
+        <!-- end footer-->
+    </div>
+
+{% endblock %}
