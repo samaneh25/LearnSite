@@ -76,14 +76,103 @@ img.c-img {
     color: #fff;
 
 }
-.btn-tl{
+
+.btn-tl {
     padding: 10px 20px;
     border-radius: 20px;
     background: #4acea1;
     color: #fff;
 
 }
-.btn-tl:hover{
+
+.btn-tl:hover {
     color: #fff;
 
+}
+
+.custom-navbar-navs li a {
+    color: rgb(41, 39, 39) !important;
+    transition: all 0.4s ease;
+    font-size: 14px !important;
+}
+
+.custom-navbar-navs li a:hover {
+    color: rgba(0, 0, 0, 0.5) !important;
+
+}
+
+@media (max-width: 992px) {
+    #navbar-collapse > ul > li > a:hover:before {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .dropdown-menu {
+        opacity: 0 !important;
+        display: block !important;
+        visibility: hidden !important;
+        top: 60px;
+        transition: all 0.3s ease !important;
+    }
+
+    .dropdown-menu:before {
+        position: absolute;
+        width: 0;
+        height: 0;
+        right: 50%;
+        top: -10px;
+        content: "";
+        z-index: 2;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+        top: 50px !important;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 20px !important;
+    }
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background: #e7e9f3;
+}
+
+#navbar-collapse > ul > li > a {
+    position: relative;
+}
+
+#navbar-collapse > ul > li > a:before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #bb2d3b;
+    top: -10px;
+    display: block;
+    transition: all 0.4s ease;
+    right: 0;
+}
+
+#navbar-collapse > ul > li > a.dropdown-toggle::after {
+    transition: all 0.4s ease;
+    transform: translateY(3px);
+}
+
+#navbar-collapse > ul > li > a:hover.dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+#navbar-collapse > ul > li > a:hover:before {
+    width: 100%;
+}
+
+.nav-item .custom-nav-item a {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
 }

@@ -49,7 +49,10 @@
                     <a href="#" class="nav-link">خانه
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a href="#" class="nav-link">دوره های آموزشی
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link"> درباره ما
                     </a>
@@ -80,13 +83,14 @@
     </div>
           <!--end menu mobile-->
 </nav>
-    <!--start main menu-->
+   <!--start main menu-->
 
 <div class="container-fluid custom-container-fluid">
     <div class="container container-c-h">
         <div class="row">
             <div class="justify-content-between text-center d-none d-md-flex align-items-center col-12 col-lg-12 col-md-12">
-  <img src="{% static 'publicPages/images/logo2.png'%}" class="c-img" width="200" height="80"><div>
+                <img src="{% static 'publicPages/images/logo2.png' %}"  class="c-img" width="200" height="80">
+                <div>
                     <a href="#">
                         <button class="btn btn-blog ">مقالات آموزشی</button>
                     </a>
@@ -100,6 +104,51 @@
 </div>
 
 <!--end main menu-->
+<!--start menu-->
+
+<nav class="navbar c-n navbar-expand-lg navbar-light">
+    <div class="container container-c-h">
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="#">
+            <button class="btn btn-blog d-lg-none d-md-none">مقالات آموزشی</button>
+        </a>
+        <a href="#">
+            <button class="btn btn-tl d-lg-none d-md-none">کانال تلگرام</button>
+        </a>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="navbar-nav text-center custom-navbar-navs">
+
+                </li>
+                <li class="nav-item dropdown custom-nav-item">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">طراحی سایت</a>
+                    <ul class="dropdown-menu text-end custom-dropdown">
+                        <a href="#" class="dropdown-item">جاوا اسکریپت</a>
+                        <a href="#" class="dropdown-item">بوت استرپ</a>
+                        <a href="#" class="dropdown-item">جی کوئری</a>
+                        <a href="#" class="dropdown-item">وردپرس</a>
+                        <a href="#" class="dropdown-item">css</a>
+                        <a href="#" class="dropdown-item">html</a>
+                    </ul>
+                </li>
+
+                <li class="nav-item custom-nav-item">
+                    <a href="#" class="nav-link">همه دوره ها</a>
+                </li>
+                <li class="nav-item custom-nav-item">
+                    <a href="#" class="nav-link">ویدیو های رایگان</a>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+</nav>
+
+
+<!--end menu-->
 
 
     <script src="{% static bootstrap.bundle.min.js %}"
