@@ -1,4 +1,5 @@
 * {
+    font-family: IRANSans;
     list-style-type: none !important;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -8,12 +9,81 @@
     margin: 0;
     padding: 0;
 }
-a:hover{
+
+*:hover {
     text-decoration: none !important;
-    color: #174fa3;
 }
-a{
+
+a {
     text-decoration: none !important;
-    color: #1a1e21;
+}
+
+.btn {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.c-n {
+    background: #faf8f8;
+}
+
+.c-n2 {
+    border-bottom: solid 1px #e9eaea;
+}
+
+.c-n ul li a {
+    font-size: 14px;
+    color: #000;
+}
+
+.custom-header-none {
+    background: #ffffff;
+    box-shadow: 3px 3px 67px rgb(204, 196, 196);
+}
+
+.custom-header-none ul li {
+    list-style-type: none;
+    float: right !important;
+    margin-top: 12px !important;
+}
+
+.custom-header-none ul li a {
+    padding: 25px 10px 0 25px !important;
+}
+
+.custom-navbar-nav li a {
+    padding: 0 10px 0 20px !important;
+}
+
+img.c-img {
+    width: 200px;
+    height: 80px;
+    margin: 25px 0;
+}
+
+.container-c-h {
+    max-width: 1280px !important;
+}
+
+.btn-blog {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #ffc740;
+    color: #fff;
+}
+
+.btn-blog:hover {
+    color: #fff;
+
+}
+.btn-tl{
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #4acea1;
+    color: #fff;
+
+}
+.btn-tl:hover{
+    color: #fff;
 
 }
