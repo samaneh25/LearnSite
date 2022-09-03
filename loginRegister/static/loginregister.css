@@ -1,10 +1,10 @@
 input[type="email"]{
   text-align: right;
-  direction:ltr;
+  direction:rtl;
 }
 
 .form-group-signing input{
-  border:1px solid #9932cc !important;
+  border:1px solid #000000 !important;
   border-radius:0.5rem !important ;
   transition:all 0.5s ease;
   padding:6px !important;
@@ -12,32 +12,32 @@ input[type="email"]{
   color:#78797c ;
 }
 .form-group-signing input:focus{
-  border:1px solid #9932cc !important;
+  border:1px solid #000000 !important;
   border-radius:0.7rem !important ;
   padding:8px !important;
 }
-.btn.btn-outline-light{background-color:#9932cc; color:#ffff !important;}
-.btn.btn-outline-light:hover{background-color:#ffff; color:#9932cc !important;}
+.btn.btn-outline-light{background-color:#20c997; color:#ffff !important;}
+.btn.btn-outline-light:hover{background-color:#0f5132; color:#ffffff !important;}
 /*.col-12.col-md-6.mx-auto.col-sm-12.col-lg-6.col-xl-6.col-xxl-6.justify-content-center.py-3.px-5{
   border-radius: 10PX;
   background-color: #ffff;
   box-shadow: 0 0 30px #f1def7;
 }*/
 .Hr{
-color:#9932cc;
+color:#20c997;
 }
 a{
-  color:#9932cc ;
+  color:#000000 ;
 }
 a:hover{
-  color:#9932cc;
+  color:#000000;
 }
 .box{
   border-radius: 10PX;
   background-color: #ffff;
-  box-shadow: 0 0 30px #f1def7;
+  box-shadow: 0 0 30px #dfe0e1;
   padding: 5rem;
 }
 .box h4{
-    color:#9932cc;
+    color:#000000;
 }

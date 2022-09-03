@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'blog',
     'publicPages',
+    'loginRegister',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
