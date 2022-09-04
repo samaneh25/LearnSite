@@ -4,6 +4,7 @@ body {
 	direction: rtl;
 	background-color: #ffffff; /*#f0f0f0;*/
 	margin: 0;
+	text-align: justify;
 }
 h1, h2, h3, h4, h5, h6,input, textarea {
 	font-family: IRANSansX, sans-serif !important;

@@ -63,12 +63,12 @@
                     <a href="{% url 'contact_us_page' %}" class="nav-link">تماس با ما</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link"> وبلاگ
+                    <a href="{% url 'blog_page'%}" class="nav-link"> وبلاگ
                     </a>
                 </li>
             </ul>
             <ul class="navbar-nav text-right">
-                <li class="fas fa-dollar-sign align-middle p-2 "><a href="#">اشتراک ویژه</a></li>
+                <li class="fas fa-dollar-sign align-middle p-2 "><a href="{% url 'plans_page'%}">اشتراک ویژه</a></li>
                 <li class="fas fa-sign-in-alt align-middle p-2"><a href="{% url 'login_register_page' %}">ورود/ثبت نام</a></li>
             </ul>
         </div>
@@ -76,7 +76,7 @@
        <!--menu mobile-->
     <div class="col-12 d-flex d-lg-none custom-header-none justify-content-center">
         <ul>
-            <li class="fas fa-dollar-sign align-middle"><a href="#">اشتراک ویژه</a></li>
+            <li class="fas fa-dollar-sign align-middle"><a href="{% url 'plans_page'%} ">اشتراک ویژه</a></li>
             <li class="fas fa-sign-in-alt align-middle"><a href="{% url 'login_register_page' %}">ورود/ثبت نام</a></li></ul>
 
     </div>

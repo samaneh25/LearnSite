@@ -18,10 +18,10 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
                 <div class="card">
-                    <img src="{% static 'publicPages/images/777.PNG' %}" class="img-fluid">
-                    " class="card-img-top imge1" alt="...">
+                    <img src="{% static 'publicPages/images/777.PNG' %}" class="card-img-top imge1" alt="...">
+
                     <div class="card-body">
-                        <a href="#">
+                        <a href="{% url 'single_blog_page' %}">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in
                                 to additional content. This content is a little bit longer.</p>
@@ -33,7 +33,7 @@
                 <div class="card">
                     <img src="{% static 'publicPages/images/777.PNG' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="{% url 'single_blog_page' %}">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in
                                 to additional content. This content is a little bit longer.</p>
@@ -45,7 +45,7 @@
                 <div class="card">
                     <img src="{% static 'publicPages/images/777.PNG' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="{% url 'single_blog_page' %}">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in
                                 to additional content. This content is a little bit longer.</p>
@@ -57,7 +57,7 @@
                 <div class="card">
                     <img src="{% static 'publicPages/images/777.PNG' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="{% url 'single_blog_page' %}">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in
                                 to additional content. This content is a little bit longer.</p>
@@ -80,5 +80,6 @@
 
         <!-- end footer-->
     </div>
+    <br>
 
 {% endblock %}
