@@ -21,4 +21,6 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('', include('publicPages.urls')),
     path('', include('loginRegister.urls')),
+    path('', include('course.urls')),
+
 ]

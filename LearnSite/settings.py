@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'blog',
     'publicPages',
     'loginRegister',
+    'course',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
