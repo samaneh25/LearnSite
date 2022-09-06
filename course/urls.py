@@ -2,5 +2,5 @@ from django.urls import path
 from course.views import *
 
 urlpatterns = [
-    path('singel_course', singel_course, name='single_course'),
+    path('singel_course', single_course, name='single_course'),
 ]
