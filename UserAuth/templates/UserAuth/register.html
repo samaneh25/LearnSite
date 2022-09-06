@@ -3,7 +3,7 @@
 {% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="{% static 'bootstrap.bundle.min.js' %}" charset="utf-8"></script>
-    <link rel="stylesheet" href="{% static 'loginregister.css' %}">
+    <link rel="stylesheet" href="{% static 'UserAuth/loginregister.css' %}">
         <link rel="stylesheet" href="{% static 'publicPages/index.css' %}">
 
 {% endblock %}
@@ -20,23 +20,25 @@
                             <h4>ثبت نام</h4>
                         </div>
                         <div class="card-body">
-                            <form>
-                                <div class="row">
-                                    <div class="form-group py-3">
-                                        <label>ایمیل</label>
-                                        <input id="email" type="email" class="form-control">
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group py-3">
-                                            <label>پسورد</label>
-                                            <input id="pass" type="text" class="form-control">
-                                        </div>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {{ form }}
+{#                                <div class="row">#}
+{#                                    <div class="form-group py-3">#}
+{#                                        <label>ایمیل</label>#}
+{#                                        <input id="email" type="email" class="form-control">#}
+{#                                    </div>#}
+{#                                    <div class="row">#}
+{#                                        <div class="form-group py-3">#}
+{#                                            <label>پسورد</label>#}
+{#                                            <input id="pass" type="text" class="form-control">#}
+{#                                        </div>#}
                                         <div class="form-group py-3">
                                             <button type="submit" class="btn btn-outline-primary mt-4 btn-lg w-100">ثبت نام</button>
                                         </div>
-
-                                    </div>
-                                </div>
+{##}
+{#                                    </div>#}
+{#                                </div>#}
                             </form>
                         </div>
                         <div class="mb-4 text-center justify-content-center">
