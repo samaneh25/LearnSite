@@ -101,15 +101,49 @@ i.fab.fa-lg.fa-twitter.px-3:hover{
     padding: 0;
     border-radius: 19px;
 }
-.comment{
-    box-shadow: 0 0 16px #d8d8d8;
-    padding: 20px;
+/*.comment{*/
+/*    box-shadow: 0 0 16px #d8d8d8;*/
+/*    padding: 20px;*/
+/*}*/
+/*.media-body p{*/
+/*    font-size: 15px !important;*/
+/*}*/
+/*.text-end {*/
+/*    text-align: right!important;*/
+/*}*/
+.btn.btn-light{background-color:#9932cc; color:#ffff !important;}
+input[type="email"]{
+  text-align: right;
+  direction:ltr;
 }
-.media-body p{
-    font-size: 15px !important;
+
+.form-group-Comments input{
+  border:1px solid #9932cc !important;
+  border-radius:0.5rem !important ;
+  transition:all 0.5s ease;
+  padding:10px !important;
+  font-size:13px ;
+  color:#78797c ;
 }
-.text-end {
-    text-align: right!important;
+.form-group-Comments input:focus{
+  border:1px solid #9932cc !important;
+  border-radius:0.7rem !important ;
+  padding:10px !important;
+}
+
+
+.form-group-Comments textarea{
+  border:1px solid #9932cc !important;
+  border-radius:0.5rem !important ;
+  transition:all 0.5s ease;
+  padding:10px !important;
+  font-size:13px ;
+  color:#78797c ;
+}
+.form-group-Comments textarea:focus{
+  border:1px solid #9932cc !important;
+  border-radius:0.7rem !important ;
+  padding:10px !important;
 }
 
 
