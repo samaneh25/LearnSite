@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'bootstrap.bundle.min.js' %}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{% static 'UserAuth/loginregister.css' %}">
+{% endblock %}
+{% block title %} فراموشی رمز عبور {% endblock %}
+
+{% block body %}
+    <div class="container-fluid container-fluid-sign new-container-fluid py-4">
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-12 mx-auto col-sm-12 col-lg-6 col-xl-6 col-xxl-6 justify-content-center py-3 px-5">
+              <div class="box">
+                <h4 class="text-center mt-3">رمز عبورم را فراموش کردم</h4>
+                <hr class="Hr">
+                <form class="form-group-signing">
+                    <div class="form-group mt-2">
+                        <input type="email" placeholder="ایمیل" class="form-control mt-4 text-muted" required>
+                    </div>
+                    <button class="btn btn-outline-light w-100 p-2 mt-5">ارسال</button>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

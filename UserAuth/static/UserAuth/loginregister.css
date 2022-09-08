@@ -1,0 +1,67 @@
+.media-body p{
+    font-size: 15px !important;
+}
+.card-footer{
+    padding: 0 15px;
+}
+.form-control:focus{
+    box-shadow: none !important;
+}
+.col-12.col-sm-10.col-md-8.col-lg-8.col-xl-8 {
+    margin: auto;
+}
+
+input#email{
+    border: 1px solid rgb(103, 113, 252) !important;
+    border-radius: 5px !important;
+    transition: all 0.5s ease;
+    padding: 25px !important;
+    font-size: 13px;
+    color: #78797c;
+}
+input#email:focus{
+    border: 1px solid rgb(103, 113, 252) !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+
+}
+input#pass{
+    border: 1px solid rgb(103, 113, 252) !important;
+    border-radius: 5px !important;
+    transition: all 0.5s ease;
+    padding: 25px !important;
+    font-size: 13px;
+    color: #78797c;
+}
+input#pass:focus{
+    border: 1px solid rgb(103, 113, 252) !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+
+}
+.form-group-signing input{
+     border: 1px solid rgb(103, 113, 252) !important;
+    border-radius: 5px !important;
+    transition: all 0.5s ease;
+    padding: 25px !important;
+    font-size: 13px;
+    color: #78797c;
+}
+.form-group-signing input:focus{
+     border: 1px solid rgb(103, 113, 252) !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+}
+.btn-outline-light {
+    color: #000;
+    background-color: #20c997;
+    border-color: #f8f9fa;
+}
+.btn-outline-light:hover {
+    color: #000;
+    background-color: #4acda0;
+    border-color:#6771FCFF;
+}
+.text-muted{
+    text-align:right !important;
+}
