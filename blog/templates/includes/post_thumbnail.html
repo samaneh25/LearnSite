@@ -1,0 +1,13 @@
+<div class="col">
+    <div class="card">
+        <img src="{{ post.primary_image.url }}" class="card-img-top imge1"
+             alt="...">
+
+        <div class="card-body">
+            <a href="{% url 'single_blog_page' post.id %}">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.content|safe|slice:'0:60' }}</p>
+            </a>
+        </div>
+    </div>
+</div>

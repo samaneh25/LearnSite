@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'bootstrap.bundle.min.js' %}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{% static 'course.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+
+{% endblock %}
+{% block title %} دوره {% endblock %}
+
+{% block body %}
+    <div class="container-fluid-post container-fluid">
+        <div class="justify-content-center align-items-center mb-4 mt-5">
+            <h1 class="text-center"><a href="#">{{ course.title }}</a></h1>
+        </div>
+        <!-- start sidebar -->
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-3 col-xl-3">
+                <div class="sidebar-2">
+                    <a href="#" class="btn btn-success w-100 p-3 align-items-center">این دوره برای کاربران ویژه می
+                        باشد.</a>
+                    <div class="justify-content-between align-items-center d-flex mt-4 px-3">
+                        <small>نام مدرس:</small>
+                        <small>محمد نصرتی</small>
+
+                    </div>
+                    <div class="justify-content-between align-items-center d-flex mt-4 px-3">
+                        <small>قیمت دوره</small>
+                        <small>98000</small>
+
+                    </div>
+                    <div class="justify-content-between align-items-center d-flex mt-4 px-3">
+                        <small>تعداد بازدید</small>
+                        <small>560000</small>
+
+                    </div>
+                    <div class="justify-content-between align-items-center d-flex mt-4 px-3 pb-3">
+                        <small>تعداد دانشجویان</small>
+                        <small>2500</small>
+
+                    </div>
+                    <a href="#" class="btn btn-success w-100 p-3 align-items-center">ثبت نام در دوره</a>
+
+                </div>
+                <div class="sidebar-answer mt-4 mb-4 justify-content-center d-none d-lg-block align-items-center">
+                    <div class="text-center text-center-img"></div>
+                    <a href="#"><p class="text-dark text-center pt-3">پرسش و پاسخ</p></a>
+                    <p class="text-center text-dark">این بخش برای کاربران رایگان وب سایت یوزرکد فعال نمی باشد</p>
+
+                </div>
+            </div>
+            <!-- start post -->
+            <div class="col-12 col-md-12 col-lg-9 col-xl-9">
+                <article>
+                    <div class="content">
+                        <video controls width="100%" poster="{{ course_preview.video_cover.url }}">
+                            <source src="{{ course_preview.video_link }}"
+                                    type="video/mp4">
+                        </video>
+
+                        <p class="text-justify mt-5">{{ course_preview.description }}</p>
+
+                    </div>
+                </article>
+            </div>
+            <!-- end post -->
+
+            <div class="container-fluid container-fluid-news">
+                <div class="row row-news">
+                    {% for course in course_headlines %}
+                        {% include 'includes/course_tumbnail.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+{% endblock %}

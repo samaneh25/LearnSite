@@ -8,10 +8,7 @@ def login_page(request):
     if request.method == 'POST':
         email = request.POST['user_name']
         password = request.POST['password']
-        print(email)
-        print(password)
         user = authenticate(request, email=email, password=password)
-        print(user)
         if user is not None:
             login(request, user)
             return redirect('home_page')

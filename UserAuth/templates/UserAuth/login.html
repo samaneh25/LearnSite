@@ -19,12 +19,6 @@
                 <p class="text-center mt-3">برای استفاده از امکانات سایت وارد حساب کاربری خود شوید</p>
                 <hr>
                 <form class="form-group-signing" method="POST">
-{#                    <div class="form-group mt-5">#}
-{#                        <input type="email" placeholder="ایمیل خود را وارد کنید" class="form-control mt-4 text-muted">#}
-{#                    </div>#}
-{#                    <div class="form-group mt-5">#}
-{#                        <input type="password" placeholder="رمز عبور خود را وارد کنید" class="form-control text-muted">#}
-{#                    </div>#}
                     {% csrf_token %}
                     {{ form }}
                     <button class="btn btn-outline-primary w-100 p-2 mt-5">ورود</button>

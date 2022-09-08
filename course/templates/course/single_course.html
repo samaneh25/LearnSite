@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'bootstrap.bundle.min.js' %}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{% static 'course.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+
+{% endblock %}
+{% block title %} دوره {% endblock %}
+
+{% block body %}
+    <div class="container-fluid-post container-fluid">
+        <div class="justify-content-center align-items-center mb-4 mt-5">
+            <h1 class="text-center"><a href="#">{{ course.title }}</a></h1>
+        </div>
+        <!-- start sidebar -->
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-3 col-xl-3">
+                <div class="sidebar-2">
+                    <a href="#" class="btn btn-success w-100 p-3 align-items-center">این دوره برای کاربران ویژه می
+                        باشد.</a>
+                    <div class="justify-content-between align-items-center d-flex mt-4 px-3">
+                        <small>نام مدرس:</small>
+                        <small>محمد نصرتی</small>
+
+                    </div>
+                    <div class="justify-content-between align-items-center d-flex mt-4 px-3">
+                        <small>قیمت دوره</small>
+                        <small>98000</small>
+
+                    </div>
+                    <div class="justify-content-between align-items-center d-flex mt-4 px-3">
+                        <small>تعداد بازدید</small>
+                        <small>560000</small>
+
+                    </div>
+                    <div class="justify-content-between align-items-center d-flex mt-4 px-3 pb-3">
+                        <small>تعداد دانشجویان</small>
+                        <small>2500</small>
+
+                    </div>
+                    <a href="#" class="btn btn-success w-100 p-3 align-items-center">ثبت نام در دوره</a>
+
+                </div>
+
+            </div>
+            <!-- start post -->
+            <div class="col-12 col-md-12 col-lg-9 col-xl-9">
+                <article>
+                    <div class="content">
+                        <video controls width="100%" poster="{{ course.video_cover.url }}">
+                            <source src="{{ course.video_link }}"
+                                    type="video/mp4">
+                        </video>
+
+                        <p class="text-justify mt-5">{{ course.description }}</p>
+
+                        <div class="share mt-4">
+                            <div class="justify-content-center align-items-center d-flex mt-3">
+                                <div>
+                                    <a href="#">
+                                        <i class="fab fa-lg fa-telegram px-3"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-lg fa-instagram px-3"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-lg fa-google-plus px-3"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-lg fa-twitter px-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <!-- end post -->
+        </div>
+    </div>
+    <br>
+    <!-- end sidebar -->
+    <!-- start comment -->
+    <div class="container-fluid container-fluid-post">
+        <h6 class="text-end mt-4">
+            دیدگاه های ارزشمند شما
+            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#cmnt-modal">
+                ثبت دیدگاه
+            </button>
+        </h6>
+        <div class="comment align-items-center justify-content-center mt-4">
+            <div class="media">
+                <img src="{% static 'publicPages/images/img_avatar3.png' %}" class="me-3 mt-3 rounded-circle"
+                     style="width: 60px;">
+                <div class="media-body">
+                    <h6 class="me-3">محمد نصرتی <small class="text-muted">29 آبان</small></h6>
+                    <p class="me-3">
+                        با تشکر از سایت خوب شما من همه حا وب سایت شما رو معرفی میکنم
+                    </p>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#cmnt-modal">پاسخ
+                    </button>
+                    <div class="media p-3">
+                        <img src="{% static 'publicPages/images/img_avatar4 - Copy.png' %}"
+                             class="me-3 mt-3 rounded-circle" style="width: 60px;">
+                        <div class="media-body">
+                            <h6 class="me-3">محمد نصرتی <small class="text-muted">29 آبان</small></h6>
+                            <p class="me-3">
+                                با تشکر از سایت خوب شما من همه حا وب سایت شما رو معرفی میکنم
+                            </p>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                                    data-bs-target="#cmnt-modal">پاسخ
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- start modal -->
+            <div class="modal fade" id="cmnt-modal">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">ثبت دیدگاه ارزشمند شما</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>دیدگاه خود را بنویسید</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end modal -->
+        </div>
+    </div>
+    <!-- end comment -->
+    <br>
+{% endblock %}
