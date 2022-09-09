@@ -20,7 +20,7 @@
                 <div class="sidebar-2">
                     {% if course_preview.is_super_course %}
                         <a href="#" class="btn btn-success w-100 p-3 align-items-center">دوره یوزرکد پلاس</a>
-{#                  {% endif %}
+                    {% endif %}
                     <div class="justify-content-between align-items-center d-flex mt-4 px-3">
                         <small>نام مدرس:</small>
                         <small>{{ course_preview.teacher_name }}</small>
@@ -37,19 +37,23 @@
                         <small>{{ student_of_this_course_number }}</small>
 
                     </div>
-                    {% if user.is_authenticated %}
-                        {% if not has_user_this_course %}
-                            <form method="POST">
-                                {% csrf_token %}
-                                <input type="hidden" value="{{ course_preview.id }}" name="course_id">
-                                <input type="submit" value="ثبت نام در دوره" name="course_id" class="btn btn-success w-100 p-3 align-items-center">
-                            </form>
-                        {% else %}
-                            <p class="btn btn-success w-100 p-3 align-items-center">شما در این دوره ثبت نام کرده اید</p>
-                        {% endif %}
+                    {% if policy.need_register %}
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ course_preview.id }}" name="course_id">
+                            <input type="submit" value="{{ policy.btn_text}}" name="course_id"
+                                   class="btn btn-success w-100 p-3 align-items-center">
+                        </form>
                     {% else %}
-                        <a href="{% url 'login_page' %}" class="btn btn-success w-100 p-3 align-items-center">برای ثبت
-                            نام دوره ابتدا وارد حساب کاربری خود شوید</a>
+                        {% if policy.need_plan %}
+                            <a href="{% url 'plans_page' %}" class="btn btn-success w-100 p-3 align-items-center">{{ policy.btn_text }}</a>
+                        {% else %}
+                            <p class="btn btn-success w-100 p-3 align-items-center">{{ policy.btn_text }}</p>
+                        {% endif %}
+                    {% endif %}
+
+                    {% if policy.need_login %}
+                        <a href="{% url 'login_page' %}" class="btn btn-success w-100 p-3 align-items-center">{{ policy.btn_txt }}</a>
                     {% endif %}
 
                 </div>
@@ -73,7 +77,7 @@
 
     <br>
 
-    {% if user.is_authenticated and has_user_this_course %}
+    {% if policy.show_headlines %}
         <div class="container-fluid container-fluid-news">
             <div class="row row-news">
                 {% for course in course_headlines %}
@@ -84,41 +88,42 @@
     {% endif %}
     <br>
 
-    <div class="container"  >
-  <div class="col-12 col-md-12 col-lg-9 col-xl-9 ">
-    <h5 class="h3">دیدگاه خود را بنویسید</h5>
-      <form class="form-group-Comments">
-            <div class="row g-2">
-              <div class="col-md">
-                <div class="form-group mt-5">
-                     <label>نام و نام خانوادگی</label>
-                    <input type="text" class="form-control text-muted" required>
+    <div class="container">
+        <div class="col-12 col-md-12 col-lg-9 col-xl-9 ">
+            <h5 class="h3">دیدگاه خود را بنویسید</h5>
+            <form class="form-group-Comments">
+                <div class="row g-2">
+                    <div class="col-md">
+                        <div class="form-group mt-5">
+                            <label>نام و نام خانوادگی</label>
+                            <input type="text" class="form-control text-muted" required>
 
-            </div>
-               </div>
+                        </div>
+                    </div>
 
-            </div>
-            <div class="form-group mt-4">
-                 <label>پیام شما</label>
-                 <textarea class="form-control"  id="floatingTextarea2" style="height: 100px" required></textarea>
-            </div>
-              <button class="btn btn-outline-light  p-2 mt-4">ارسال پیام</button>
-              <h6 class="text-end mt-4">دیدگاه های ارزشمند شما</h6>
-           <div class="comment align-items-center justify-content-center mt-4">
-            <div class="media">
-               <img src="{% static 'publicPages/images/img_avatar3.png' %}" class="me-3 mt-3 rounded-circle" style="width: 60px;">
-                <div class="media-body">
-                    <h6 class="me-3">محمد نصرتی <small class="text-muted">29 آبان</small></h6>
-                    <p class="me-3">
-                        با تشکر از سایت خوب شما من همه حا وب سایت شما رو معرفی میکنم
-                    </p>
-           </div>
-            </div>
-           </div>
+                </div>
+                <div class="form-group mt-4">
+                    <label>پیام شما</label>
+                    <textarea class="form-control" id="floatingTextarea2" style="height: 100px" required></textarea>
+                </div>
+                <button class="btn btn-outline-light  p-2 mt-4">ارسال پیام</button>
+                <h6 class="text-end mt-4">دیدگاه های ارزشمند شما</h6>
+                <div class="comment align-items-center justify-content-center mt-4">
+                    <div class="media">
+                        <img src="{% static 'publicPages/images/img_avatar3.png' %}" class="me-3 mt-3 rounded-circle"
+                             style="width: 60px;">
+                        <div class="media-body">
+                            <h6 class="me-3">محمد نصرتی <small class="text-muted">29 آبان</small></h6>
+                            <p class="me-3">
+                                با تشکر از سایت خوب شما من همه حا وب سایت شما رو معرفی میکنم
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-      </form>
-      </div>
-</div>
+            </form>
+        </div>
+    </div>
     <br>
     <br>
 
