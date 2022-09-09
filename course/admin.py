@@ -17,6 +17,6 @@ class CourseCommentModel(admin.ModelAdmin):
     list_display = ['id', 'headline_id', 'user_id', 'comment']
 
 
-@admin.register(TestModel)
-class TestModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'test']
+@admin.register(SavedCourse)
+class SavedCourseAdmin(admin.ModelAdmin):
+    list_display = ['id', 'course_id', 'user_id']

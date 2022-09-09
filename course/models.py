@@ -36,6 +36,7 @@ class CourseCommentModel(models.Model):
     comment = models.TextField(max_length=500)
 
 
-class TestModel(models.Model):
-    test = models.CharField(max_length=10)
+class SavedCourse(models.Model):
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    course_id = models.ForeignKey(CoursePreviewModel, on_delete=models.CASCADE)
 

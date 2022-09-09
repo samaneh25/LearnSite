@@ -12,41 +12,45 @@
 {% block body %}
     <div class="container-fluid-post container-fluid">
         <div class="justify-content-center align-items-center mb-4 mt-5">
-            <h1 class="text-center"><a href="#">{{ course.title }}</a></h1>
+            <h1 class="text-center"><a href="#">{{ course_preview.title }}</a></h1>
         </div>
         <!-- start sidebar -->
         <div class="row">
             <div class="col-12 col-md-12 col-lg-3 col-xl-3">
                 <div class="sidebar-2">
-                    <a href="#" class="btn btn-success w-100 p-3 align-items-center">این دوره برای کاربران ویژه می
-                        باشد.</a>
+                    {% if course_preview.is_super_course %}
+                    <a href="#" class="btn btn-success w-100 p-3 align-items-center">برای دسترسی به محتوای این آموزش باید اشتراک کدیوزر خریداری کنید</a>
                     <div class="justify-content-between align-items-center d-flex mt-4 px-3">
                         <small>نام مدرس:</small>
-                        <small>محمد نصرتی</small>
+                        <small>{{ course_preview.teacher_name }}</small>
 
                     </div>
                     <div class="justify-content-between align-items-center d-flex mt-4 px-3">
-                        <small>قیمت دوره</small>
-                        <small>98000</small>
-
-                    </div>
-                    <div class="justify-content-between align-items-center d-flex mt-4 px-3">
-                        <small>تعداد بازدید</small>
-                        <small>560000</small>
+                        <small>تعداد جلسات</small>
+                        <small>{% if course_headlines|length > 0 %} {{ course_headlines|length }} {% else %}
+                            1 {% endif %}</small>
 
                     </div>
                     <div class="justify-content-between align-items-center d-flex mt-4 px-3 pb-3">
-                        <small>تعداد دانشجویان</small>
-                        <small>2500</small>
+                        <small>تعداد دانشجویان این دوره</small>
+                        <small>{{ student_of_this_course_number }}</small>
 
                     </div>
-                    <a href="#" class="btn btn-success w-100 p-3 align-items-center">ثبت نام در دوره</a>
-
-                </div>
-                <div class="sidebar-answer mt-4 mb-4 justify-content-center d-none d-lg-block align-items-center">
-                    <div class="text-center text-center-img"></div>
-                    <a href="#"><p class="text-dark text-center pt-3">پرسش و پاسخ</p></a>
-                    <p class="text-center text-dark">این بخش برای کاربران رایگان وب سایت یوزرکد فعال نمی باشد</p>
+                    {% if user.is_authenticated %}
+                        {% if not has_user_this_course %}
+{#                            <a href="{% url 'register_user_in_courser' course_preview.id %}" class="btn btn-success w-100 p-3 align-items-center">ثبت نام در دوره</a>#}
+                            <form method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" value="{{ course_preview.id }}" name="course_id">
+                                <input type="submit" value="ثبت نام در دوره" name="course_id" class="btn btn-success w-100 p-3 align-items-center">
+                            </form>
+                        {% else %}
+                            <p class="btn btn-success w-100 p-3 align-items-center">شما در این دوره ثبت نام کرده اید</p>
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'login_page' %}" class="btn btn-success w-100 p-3 align-items-center">برای ثبت
+                            نام دوره ابتدا وارد حساب کاربری خود شوید</a>
+                    {% endif %}
 
                 </div>
             </div>
@@ -64,18 +68,59 @@
                     </div>
                 </article>
             </div>
-            <!-- end post -->
-
-            <div class="container-fluid container-fluid-news">
-                <div class="row row-news">
-                    {% for course in course_headlines %}
-                        {% include 'includes/course_tumbnail.html' %}
-                    {% endfor %}
-                </div>
-            </div>
-
         </div>
     </div>
+
     <br>
+
+    {% if user.is_authenticated and has_user_this_course %}
+        <div class="container-fluid container-fluid-news">
+            <div class="row row-news">
+                {% for course in course_headlines %}
+                    {% include 'includes/course_tumbnail.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    <br>
+
+    <div class="container"  >
+  <div class="col-12 col-md-12 col-lg-9 col-xl-9 ">
+    <h5 class="h3">دیدگاه خود را بنویسید</h5>
+      <form class="form-group-Comments">
+            <div class="row g-2">
+              <div class="col-md">
+                <div class="form-group mt-5">
+                     <label>نام و نام خانوادگی</label>
+                    <input type="text" class="form-control text-muted" required>
+
+            </div>
+               </div>
+
+            </div>
+            <div class="form-group mt-4">
+                 <label>پیام شما</label>
+                 <textarea class="form-control"  id="floatingTextarea2" style="height: 100px" required></textarea>
+            </div>
+              <button class="btn btn-outline-light  p-2 mt-4">ارسال پیام</button>
+              <h6 class="text-end mt-4">دیدگاه های ارزشمند شما</h6>
+           <div class="comment align-items-center justify-content-center mt-4">
+            <div class="media">
+               <img src="{% static 'publicPages/images/img_avatar3.png' %}" class="me-3 mt-3 rounded-circle" style="width: 60px;">
+                <div class="media-body">
+                    <h6 class="me-3">محمد نصرتی <small class="text-muted">29 آبان</small></h6>
+                    <p class="me-3">
+                        با تشکر از سایت خوب شما من همه حا وب سایت شما رو معرفی میکنم
+                    </p>
+           </div>
+            </div>
+           </div>
+
+      </form>
+      </div>
+</div>
+    <br>
+    <br>
+
     <br>
 {% endblock %}
