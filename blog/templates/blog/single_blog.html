@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load jalali_tags %}
 {% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="{% static 'bootstrap.bundle.min.js' %}" charset="utf-8"></script>
@@ -17,7 +16,7 @@
                 <img src="{{ post.primary_image.url }}" class="img-fluid mb-12 col-12 imgee1">
                 <h3 class="fw-bold">{{ post.title}}</h3>
                 <hr>
-                <p class="mt-12">آخرین بروزرسانی در تاریخ : {{ post.updated_at|to_jalali:'%Y %B' }}</p>
+                <p class="mt-12">آخرین بروزرسانی در تاریخ : {{ post.updated_at }}</p>
                 {{ post.content|safe }}
             </div>
         </div>
