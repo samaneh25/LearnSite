@@ -37,10 +37,6 @@ def forget_page(request):
     return render(request, 'UserAuth/forget.html')
 
 
-def plans_page(request):
-    return render(request, 'UserAuth/plans.html')
-
-
 @login_required
 def user_logout(request):
     logout(request)

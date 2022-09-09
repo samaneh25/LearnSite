@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'publicPages',
     'UserAuth',
     'course',
+    'plan',
     'django_summernote',
     'jalali_date',
     'django.contrib.admin',

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from course.models import *
+from plan.models import *
 from django.contrib.auth.decorators import login_required
 
 
@@ -32,3 +33,8 @@ def course_preview(request, course_id):
         'has_user_this_course': result,
         'student_of_this_course_number': student_number,
     })
+
+
+def __handle_course_policy(course, user):
+    if course.is_super_course:
+        UserActivePLan.objects.filter(user_id=user)

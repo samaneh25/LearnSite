@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'bootstrap.bundle.min.js' %}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{% static 'plan/plans.css' %}">
+{% endblock %}
+{% block title %}اشتراک ویژه{% endblock %}
+
+{% block body %}
+    <div class="justify-content-center align-items-center mb-4 mt-5">
+        <h1 class="text-center">{{ message }}</h1>
+    </div>
+    <div class="container-fluid container-fluid-sign new-container-fluid py-4">
+        <div class="container container-sign d-flex justify-content-center">
+            {% for plan in plans %}
+                <div class="pricing">
+                    <h3 class="text-center mb-4 text-white">{{ plan.period }}</h3>
+                    <h3 class="text-center mb-4 text-white">{{ plan.price }}
+                        <sup class="dollar">هزار تومان</sup>
+                    </h3>
+                    <ul class="features">
+                        <li class="mb-5">
+                            <i class="fa fa-check"></i>
+                            {{ plan.description }}
+                        </li>
+                    </ul>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{ plan.id }}" name="plan_id">
+                        <input type="submit" value="عضویت ویژه" name="course_id"
+                               class="order-button">
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
